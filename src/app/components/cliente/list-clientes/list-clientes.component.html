@@ -1,0 +1,51 @@
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>
+        <small class="text-muted">Cadastro</small>
+      </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <button type="button" class="btn btn-primary float-right" routerLink="/novocliente/">Adicionar</button>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 20px">
+    <div class="col-md-12">
+      <table id="tblDados" class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Data Nacimento</th>
+            <th scope="col">Cpf</th>
+            <th scope="col">RG</th>
+            <th scope="col">Gênero</th>
+            <th scope="col" style="width: 50px;">Ações</th>
+            <th scope="col" style="width: 50px;"></th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clienteList; index as i;">
+            <th scope="row">{{i+1}}</th>
+            <td>{{cliente.nome}}</td>
+            <td>{{converteData(cliente.dataNascimento)}}</td>
+            <td>{{cliente.cpf}}</td>
+            <td>{{cliente.rg}}</td>
+            <td>{{cliente.genero}}</td>
+            <td><button type="button" class="edit-button" routerLink="/cliente/{{cliente.id}}">
+                <i class="fa fa-edit">Edt</i>
+              </button>
+            <td><button type="button" class="delete-button" (click)="deleteCliente(cliente.cpf)">
+                <i class="fa fa-trash">Exc</i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

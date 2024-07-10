@@ -1,0 +1,40 @@
+<div class=body>
+  <div class="card">
+    <div class="left">
+      <img src="http://127.0.0.1:5000/{{candyInfo?.imagem}}" class="img" alt="">
+    </div>
+    <div class="right">
+      <div class="info">
+        <span class="genero">{{candyInfo?.genero}}</span>
+        <h3 class="title">{{candyInfo?.categoria}}</h3>
+        <div>
+          <label class="avaliacao-label">Descrição:</label>
+          <span class="descricao">{{candyInfo?.descricao}}</span>
+        </div>
+        <div>
+          <label class="avaliacao-label">Valor:</label>
+          <span class="value">${{candyInfo?.valor_atual}}</span>
+        </div>
+      </div>
+
+      <div>
+        <form (ngSubmit)="criarAvaliacao()" class="coment-form">
+          <div class="input">
+            <label for="avaliacao" class="avaliacao-label">Escreva uma avaliação:</label>
+            <textarea type="textarea" class="text-input" name="avaliacao" [(ngModel)]="avaliacao"></textarea>
+          </div>
+          <button type="submit" class="submit-button">Inserir Avaliação</button>
+          <button type="button" class="delete-button" (click)="deleteCandy(candyInfo?.descricao)">
+            Excluir doce</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  <div class="card-footer">
+    <h3>Comentários</h3>
+    <div *ngFor="let item of candyInfo?.avaliacoes" class="comment-session">
+      <span class="comment">{{item.desc_avaliacao}}</span>
+    </div>
+  </div>
+</div>

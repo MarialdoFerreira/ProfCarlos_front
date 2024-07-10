@@ -1,0 +1,47 @@
+.body {
+  background-color: white;
+  margin-left:20vw ;
+  margin-right: 20vw;
+
+  border-radius: 15px;
+
+  padding: 10px;
+  color: black;
+
+  margin-top: 1vh;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.input-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.text-input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 40vw;
+}
+
+.submit-button {
+  background-color: #796c86;
+  border: #796c86;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  align-self: flex-end;
+  min-width: 50px;
+  margin-top: 20px;
+}

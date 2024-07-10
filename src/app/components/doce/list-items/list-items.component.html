@@ -1,0 +1,32 @@
+<div class="body">
+  <div class="page-title">
+    <h3>Portfólio Adoceirinha!</h3>
+    <!-- 
+    <div class="search">
+      <form>
+        <input type="text" class="search-input" name="search" placeholder="Buscar..">
+        <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+    -->
+  </div>
+
+  <div class="body-list">
+    <div class="card" *ngFor="let item of candyList; index as i;">
+      <div class="left">
+        <img src="http://127.0.0.1:5000/{{item.imagem}}" class="img" alt="">
+      </div>
+      <div class="right">
+        <div>
+          <span class="genero">{{item.genero}}</span>
+          <h3 class="title">{{item.categoria}}</h3>
+        </div>
+        <span class="descricao">{{item.descricao}}</span>
+        <span class="value">{{item.valor_atual}}</span>
+        <button class="button" routerLink="/doce/{{item.id}}">
+          ver doce</button>
+      </div>
+    </div>
+  </div>
+
+</div>

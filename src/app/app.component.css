@@ -1,0 +1,44 @@
+.nav {
+  display: flex;
+  align-items: center;
+  padding: 0 20vw;
+  background-color: white;
+}
+
+.logo {
+  margin-right: auto;
+  display: flex;
+}
+
+.logo-img {
+  max-width: 6vw;
+  max-height: 6vh;
+  margin-right: 1vw;
+}
+
+.logo-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.nav-menu {
+  background-color: #937071;
+  border-radius: 5px;
+  margin-top: 20px;
+  min-width: 15vw;
+  min-height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  gap: 20px;
+  color: aliceblue;
+}
+
+li {
+  list-style-type: none;
+  margin: auto;
+  padding: 0;
+  font-weight: 600;
+
+}

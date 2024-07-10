@@ -1,0 +1,71 @@
+<div class="body">
+  <h6>Cadastro</h6>
+  <form class="create-form" (ngSubmit)="criarNovoCliente()">
+    <div class="input">
+      <input class="form-control form-control-sm" type="text" name="nome" placeholder="Nome do cliente:"
+        [(ngModel)]="nome" aria-label=".form-control-sm example">
+    </div>
+    <div class="input">
+      <input class="form-control form-control-sm" type="text" name="cpf" placeholder="CPF do Cliente:" [(ngModel)]="cpf"
+        aria-label=".form-control-sm example">
+    </div>
+    <div class="input">
+      <label for="genero" class="form-control form-control-sm" aria-label=".form-control-sm example">Genero:</label>
+      <div>
+        <select name="genero" class="form-control form-control-sm" [(ngModel)]="genero"
+          aria-label=".form-control-sm example">
+          <option value="Feminino">Feminino</option>
+          <option value="Masculino">Masculino</option>
+        </select>
+      </div>
+    </div>
+    <div class="input">
+      <label for="dataNascimento" class="form-control form-control-sm" ria-label=".form-control-sm example">Data
+        Nascimento:</label>
+      <input type="date" class="form-control form-control-sm" name="dataNascimento"
+        aria-label=".form-control-sm example" [(ngModel)]="dataNascimento">
+    </div>
+    <div class="input">
+      <input class="form-control form-control-sm" type="text" name="rg" placeholder="RG do Cliente:" [(ngModel)]="rg"
+        aria-label=".form-control-sm example">
+    </div>
+    <div class="input">
+      <input class="form-control form-control-sm" type="text" name="enderecoEmail" placeholder="E-mail do Cliente:"
+        [(ngModel)]="enderecoEmail" aria-label=".form-control-sm example">
+    </div>
+
+    <div class="row g-3">
+      <div class="col-sm-7">
+        <input type="text" class="form-control form-control-sm" name="cep" placeholder="CEP:"
+          aria-label=".form-control-sm example" [(ngModel)]="cep">
+      </div>
+      <div class="col-sm">
+        <button (click)="onClickZipcode(cep)" type="button" class="btn btn-primary"
+          style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">busca cep
+        </button>
+      </div>
+    </div>
+
+    <div class="input">
+      <input class="form-control form-control-sm" type="text" name="logradouro" placeholder="Logradouro:"
+        [(ngModel)]="logradouro" aria-label=".form-control-sm example">
+    </div>
+    <div class="input">
+      <input class="form-control form-control-sm" type="text" name="complemento" placeholder="Complemento:"
+        [(ngModel)]="complemento" aria-label=".form-control-sm example">
+    </div>
+    <div class="input">
+      <input class="form-control form-control-sm" type="text" name="bairro" placeholder="Bairro:" [(ngModel)]="bairro"
+        aria-label=".form-control-sm example">
+    </div>
+    <div class="input">
+      <input class="form-control form-control-sm" type="text" name="localidade" placeholder="Localidade:"
+        [(ngModel)]="localidade" aria-label=".form-control-sm example">
+    </div>
+    <div class="input">
+      <input class="form-control form-control-sm" type="text" name="uf" placeholder="UF:" [(ngModel)]="uf"
+        aria-label=".form-control-sm example">
+    </div>
+    <button type="submit" class="submit-button">Gravar</button>
+  </form>
+</div>
