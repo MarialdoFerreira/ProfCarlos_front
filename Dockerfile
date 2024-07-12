@@ -1,12 +1,17 @@
-# Use uma imagem base com um servidor web (por exemplo, Nginx)
-# O nginx é um servidor leve e de código fonte aberto para realizar requisições HTTP
-FROM nginx:latest
+#utilizando a imagem do node para criação do seu ambiente
+FROM node:alpine
 
-# Copie os arquivos da aplicação para o diretório padrão do servidor web do Nginx
-COPY ./src /usr/share/nginx/html
+#cria a pasta do aplicativo
+WORKDIR /usr/src/app
 
-# O Nginx expõe a porta 80 por padrão, onde o servidor web irá rodar
-EXPOSE 80
+#copia seus arquivos para a pasta do aplicativo
+COPY . /usr/src/app
 
-# Comando para iniciar o servidor web Nginx em primeiro plano
-CMD ["nginx", "-g", "daemon off;"]
+#instala a CLI do Angular
+RUN npm install -g @angular/cli
+
+#instala as dependências do projeto
+RUN npm install
+
+#inicializa o servidor de host para o seu projeto
+CMD ["ng", "serve", "--host", "0.0.0.0"]

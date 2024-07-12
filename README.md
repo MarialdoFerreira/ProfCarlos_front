@@ -4,6 +4,11 @@ Este projeto estabelecer controles de uma confeitaria, onde fará o cadastro do 
 
 Tem por objetivo subsidiar os gestores com informações de caracter gerencial, visando avaliar e estabelecer preços que façam frente a concorrência e que proporcionem continuidade e crescimento.
 
+Diagrama com as API utilizadas no MVP seguem no anexo da entrega com o nome: Diagrama_MVP_Adoceirinha.pdf
+
+Foi utilizada a API VIA CEP de uso gratuito, sem necessidade licença e cadastro. API principal invoca a API VIA CEP que encontra-se situada na pasta `src/app/services/via-cep.service.ts`, pelo metodo `GET` como demonstrado a seguir: 
+httpClient.get<address>(`https://viacep.com.br/ws/${zipcode}/json/`);
+
 
 ## Servidor de desenvolvimento
 
@@ -36,8 +41,7 @@ $ docker build -t api-adoceirinha-frontend-sp03 .
 Uma vez criada a imagem, para executar o container basta executar, **como administrador**, seguinte o comando:
 
 ``` 
-$ docker run -d -p 4200:80 api-adoceirinha-frontend-sp03
+$ docker run -d -p 4200:4200 api-adoceirinha-frontend-sp03
 ```
 
 Uma vez executando, para acessar o front-end, basta abrir o [http://localhost:4200/#/](http://localhost:4200/#/) no navegador.
-
